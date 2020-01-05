@@ -2,14 +2,17 @@ require("dotenv").config();
 var axios = require("axios");
 var Spotify = require('node-spotify-api');
 
+var app = process.argv[2];
+var content = process.argv.splice(3).join(" ")
+
 var keys = require("./keys.js");
 var spotify = new Spotify(keys.spotify);
 
 var appInput = process.argv[2];
 var mediaInput = process.argv[3];
 
-function readApplication() {
-    switch(application) {
+function readApp() {
+    switch(app) {
         case "concert-this":
             bandsInTown();
             break;
@@ -27,4 +30,8 @@ function readApplication() {
             break;
     }
 };
-readApplication();
+readApp();
+
+function bandsInTown() {
+    
+}
