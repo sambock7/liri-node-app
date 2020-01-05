@@ -44,8 +44,8 @@ function spotifyThisSong() {
             return console.log('Error occurred: ' + err);
         }
         console.log("Artist: " + data.tracks.items[0].artists[0].name);
-        console.log("Song Name: " + data.tracks.items[0].name);
-        console.log("Preview Link: " + data.tracks.items[0].external_urls.spotify);
+        console.log("Song: " + data.tracks.items[0].name);
+        console.log("Link: " + data.tracks.items[0].external_urls.spotify);
         console.log("Album: " + data.tracks.items[0].album.name);
     });
 }
@@ -60,11 +60,11 @@ function movieThis() {
     axios.get("http://www.omdbapi.com/?t=" + mediaInput + "&y=&plot=short&apikey=" + OMDB).then(
         function (response) {
             console.log("Title: " + response.data.Title);
-            console.log("Year of release: " + response.data.Year);
+            console.log("Release Date: " + response.data.Year);
             console.log("IMDB Rating: " + response.data.Ratings[1].Value);
             console.log("Rotten Tomatoes Rating: " + response.data.Ratings[2].Value);
-            console.log("Produced in: " + response.data.Country);
-            console.log("Languages: " + response.data.Language);
+            console.log("Country Produced: " + response.data.Country);
+            console.log("Language: " + response.data.Language);
             console.log("Actors: " + response.data.Actors);
         })
         .catch(function (error) {
